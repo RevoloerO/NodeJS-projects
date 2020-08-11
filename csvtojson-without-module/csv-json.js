@@ -18,9 +18,11 @@ for(let i = 1; i<rawData.length;i++){
   }
   jsonString +="},"
 }
+jsonString = jsonString.slice(0,-1)
 jsonString += "]"
-
-fs.writeFile("customer-data.json", jsonString, (err) => {
+//json = JSON.parse(jsonString)
+//console.log(json[0].email)
+fs.writeFile("customer-data.json",jsonString, (err) => {
   if (err)
     console.log(err);
   else {
